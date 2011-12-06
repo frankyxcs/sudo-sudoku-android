@@ -3,10 +3,12 @@
 #include <time.h>
 #include <math.h>
 
+#define DEBUG 0
+
 void randCube(int[9]);
-void printCube(int[9]);
-void printBoard(int[9][9]);
-void printFormattedBoard(int[9][9]);
+int printCube(int[9]);
+int printBoard(int[9][9]);
+int printFormattedBoard(int[9][9]);
 
 void initBoard(int[9][9]);
 
@@ -41,19 +43,19 @@ int main( int argc, char** argv ) {
     
     initBoard(sku);
     
-    printf("\nrandom gen board:\n");
+    DEBUG && printf("\nrandom gen board:\n");
     cubeToRC(sku);
-    printBoard(sku);
+    DEBUG && printBoard(sku);
 
-    printf("\nshuffled board:\n");
+    DEBUG && printf("\nshuffled board:\n");
     shuffleRC(sku);
-    printBoard(sku);
+    DEBUG && printBoard(sku);
 
-    printf("\nfinal board:\n");
+    DEBUG && printf("\nfinal board:\n");
     randClear(sku,numgivens);
-    printBoard(sku);
+    DEBUG && printBoard(sku);
 
-    printf("\nformatted board:\n");
+    DEBUG && printf("\nformatted board:\n");
     printFormattedBoard(sku);
 
     /*
@@ -83,13 +85,14 @@ void randCube(int cube[9]) {
     }
 }
 
-void printCube(int cube[9]) {
+int printCube(int cube[9]) {
     int i;
     for(i=0; i < 9; i++) {
         printf("%d ",cube[i]);
         if( (i+1)%3==0)
             printf("\n");
     }
+    return 1;
 }
 
 void rotArrayRight(int* a, int len, int n) {
@@ -127,7 +130,7 @@ void rotCubeLeft(int cube[9], int n) {
     }
 }
 
-void printBoard(int board[9][9]) {
+int printBoard(int board[9][9]) {
     int i,j;
     for(i=0;i<9;i++) {
         for(j=0;j<9;j++) {
@@ -151,6 +154,7 @@ void printBoard(int board[9][9]) {
         }
     printf("\n");
     }*/
+    return 1;
 }
 
 void cubeToRC(int oldb[9][9]) {
@@ -192,7 +196,7 @@ void shuffleRC(int board[9][9]) {
         }
         n--;
     }
-    printf("successful swaps: %d\n",ct);
+    DEBUG && printf("successful swaps: %d\n",ct);
 }
 
 void swapRows(int board[9][9],int a,int b) {
@@ -232,8 +236,9 @@ void randClear(int board[9][9],int givens) {
     }
 }
 
-void printFormattedBoard(int board[9][9]) {
+int printFormattedBoard(int board[9][9]) {
     int r,c;
+    printf("#VStandard\n");
     for(r=0; r<9; r++) {
         for(c=0; c<9; c++) {
             if(board[r][c]!=0)
@@ -243,6 +248,7 @@ void printFormattedBoard(int board[9][9]) {
         }
         printf("\n");
     }
+    return 1;
 }
 
 void initBoard(int board[9][9]) {
