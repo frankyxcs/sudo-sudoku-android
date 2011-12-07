@@ -62,7 +62,7 @@ public class ImageProcActivity extends Activity {
 				w=(xmax-xmin)*8/90;
 				cells[i][j]=Bitmap.createBitmap(b,x,y,w,h);
 				try {
-					out = new FileOutputStream("/mnt/sdcard/download/cell"+i+j+".jpg");
+					out = new FileOutputStream("/mnt/sdcard/download/cell"+j+i+".jpg");
 					cells[i][j].compress(Bitmap.CompressFormat.JPEG, 90, out);
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
