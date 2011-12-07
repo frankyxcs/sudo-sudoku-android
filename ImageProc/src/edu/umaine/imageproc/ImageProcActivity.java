@@ -4,6 +4,9 @@
 
 package edu.umaine.imageproc;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -26,12 +29,15 @@ public class ImageProcActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
+		String str="";
 		int height, width;
-		/*int i,j;
-		int x,y,h,w; //coordinates*/
+		int i,j;
+		int x,y,h,w,xmin,xmax; //coordinates
+		int s_h; //sudoku height, top width, and bottom width
+		FileOutputStream out;
 		tv= (TextView) findViewById(R.id.tv1);
 		Bitmap b=BitmapFactory.decodeFile("/mnt/sdcard/download/2011-11-22_23-37-43_218.jpg");
+		Bitmap cells[][]=new Bitmap[9][9];
 		
 		width=b.getWidth();
 		height=b.getHeight();
@@ -40,13 +46,32 @@ public class ImageProcActivity extends Activity {
 		corners[2]=new Point(0,height);
 		corners[3]=new Point(width,height);
 		FindPuzzleCorners(b);
-		/*for (i=0;i<9;i++)
+		//determine location of cells from corners, assumes flat top and bottom
+		//but accounts for angled left and right sides
+		s_h=corners[2].y-corners[0].y;
+		for (i=0;i<9;i++)
 		{
 			for (j=0;j<9;j++)
 			{
-				i/9
+				//Add a 10% buffer on each side of each cell
+				y=(s_h*j/9+corners[0].y+s_h/90);
+				h=(s_h*8/90);
+				xmin=(corners[2].x-corners[0].x)*j/9+corners[0].x;
+				xmax=(corners[3].x-corners[1].x)*j/9+corners[1].x;
+				x=(xmax-xmin)*i/9+xmin+(xmax-xmin)/90;
+				w=(xmax-xmin)*8/90;
+				cells[i][j]=Bitmap.createBitmap(b,x,y,w,h);
+				try {
+					out = new FileOutputStream("/mnt/sdcard/download/cell"+i+j+".jpg");
+					cells[i][j].compress(Bitmap.CompressFormat.JPEG, 90, out);
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					str="Failed file write";
+				}
 			}
-		}*/
+		}
+		tv.setText(tv.getText()+"\nDone writing files ... "+str);
 	}
 	
 	private void FindPuzzleCorners(Bitmap b)
