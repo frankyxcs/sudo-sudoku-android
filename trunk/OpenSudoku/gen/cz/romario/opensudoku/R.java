@@ -11,6 +11,7 @@ public final class R {
     public static final class array {
         public static final int game_levels=0x7f060003;
         public static final int game_states=0x7f060000;
+        public static final int imageimport_choices=0x7f060004;
         /**  Theme codes should not change, do not translate this! 
  Theme codes should not change, do not translate this! 
          */
@@ -233,24 +234,25 @@ containing a value of this type.
     public static final class string {
         public static final int about=0x7f090013;
         public static final int add_folder=0x7f090010;
-        public static final int add_sudoku=0x7f09002b;
-        public static final int all_solved=0x7f09001f;
+        public static final int add_sudoku=0x7f09002d;
+        public static final int all_solved=0x7f090021;
         public static final int app_name=0x7f090000;
-        public static final int at_time=0x7f090028;
+        public static final int at_time=0x7f09002a;
         public static final int choose_diff=0x7f09001a;
+        public static final int choose_imageimport=0x7f09001d;
         public static final int clear=0x7f090009;
-        public static final int clear_all_notes=0x7f090037;
-        public static final int clear_all_notes_confirm=0x7f09003d;
+        public static final int clear_all_notes=0x7f090039;
+        public static final int clear_all_notes_confirm=0x7f09003f;
         public static final int close=0x7f090008;
-        public static final int congrats=0x7f09003a;
-        public static final int created_at=0x7f090027;
-        public static final int credits=0x7f090064;
+        public static final int congrats=0x7f09003c;
+        public static final int created_at=0x7f090029;
+        public static final int credits=0x7f090066;
         public static final int delete_folder=0x7f090015;
         public static final int delete_folder_confirm=0x7f090018;
         public static final int delete_folder_title=0x7f090017;
-        public static final int delete_puzzle=0x7f090034;
-        public static final int delete_puzzle_confirm=0x7f09002f;
-        public static final int difficulty_easy=0x7f090080;
+        public static final int delete_puzzle=0x7f090036;
+        public static final int delete_puzzle_confirm=0x7f090031;
+        public static final int difficulty_easy=0x7f090082;
         /**  localization of default folder names 
  localization of default folder names 
  localization of default folder names 
@@ -259,32 +261,32 @@ containing a value of this type.
  localization of default folder names 
  localization of default folder names 
          */
-        public static final int difficulty_hard=0x7f09007e;
-        public static final int difficulty_medium=0x7f09007f;
-        public static final int directory=0x7f09007a;
+        public static final int difficulty_hard=0x7f090080;
+        public static final int difficulty_medium=0x7f090081;
+        public static final int directory=0x7f09007c;
         public static final int edit_note=0x7f09000f;
-        public static final int edit_puzzle=0x7f090033;
+        public static final int edit_puzzle=0x7f090035;
         public static final int edit_sudoku=0x7f090001;
         public static final int email=0x7f090005;
-        public static final int export=0x7f09006b;
-        public static final int export_all_folders=0x7f09006d;
-        public static final int export_folder=0x7f09006c;
-        public static final int exporting=0x7f090070;
-        public static final int file_exists=0x7f09007d;
-        public static final int filename=0x7f090079;
-        public static final int fill_in_notes=0x7f090038;
+        public static final int export=0x7f09006d;
+        public static final int export_all_folders=0x7f09006f;
+        public static final int export_folder=0x7f09006e;
+        public static final int exporting=0x7f090072;
+        public static final int file_exists=0x7f09007f;
+        public static final int filename=0x7f09007b;
+        public static final int fill_in_notes=0x7f09003a;
         /**  Strings added/changed in 1.1.1 
          */
-        public static final int fill_in_notes_summary=0x7f090087;
-        public static final int filter=0x7f09002c;
-        public static final int filter_active=0x7f090035;
-        public static final int filter_by_gamestate=0x7f09002d;
-        public static final int first_run_hint=0x7f090053;
-        public static final int folders=0x7f09002e;
-        public static final int folders_created=0x7f09006e;
-        public static final int game=0x7f090059;
-        public static final int game_helpers=0x7f090040;
-        public static final int game_settings=0x7f09003f;
+        public static final int fill_in_notes_summary=0x7f090089;
+        public static final int filter=0x7f09002e;
+        public static final int filter_active=0x7f090037;
+        public static final int filter_by_gamestate=0x7f09002f;
+        public static final int first_run_hint=0x7f090055;
+        public static final int folders=0x7f090030;
+        public static final int folders_created=0x7f090070;
+        public static final int game=0x7f09005b;
+        public static final int game_helpers=0x7f090042;
+        public static final int game_settings=0x7f090041;
         public static final int gen_puzzle_name=0x7f09001b;
         public static final int generate=0x7f090019;
         /**  Strings added/changed in 1.1.0 
@@ -295,29 +297,30 @@ containing a value of this type.
  Strings added/changed in 1.1.0 
  Strings added/changed in 1.1.0 
          */
-        public static final int generate_sudoku=0x7f090081;
-        public static final int generating=0x7f090083;
+        public static final int generate_sudoku=0x7f090083;
+        public static final int generating=0x7f090085;
         public static final int get_more_puzzles_online=0x7f09000b;
-        public static final int help=0x7f090051;
-        public static final int help_text=0x7f090058;
-        public static final int highlight_completed_values=0x7f090072;
-        public static final int highlight_completed_values_summary=0x7f090073;
-        public static final int highlight_touched_cell=0x7f090069;
-        public static final int highlight_touched_cell_summary=0x7f09006a;
-        public static final int highlight_wrong_values=0x7f090041;
-        public static final int highlight_wrong_values_summary=0x7f090042;
-        public static final int hint=0x7f090050;
+        public static final int help=0x7f090053;
+        public static final int help_text=0x7f09005a;
+        public static final int highlight_completed_values=0x7f090074;
+        public static final int highlight_completed_values_summary=0x7f090075;
+        public static final int highlight_touched_cell=0x7f09006b;
+        public static final int highlight_touched_cell_summary=0x7f09006c;
+        public static final int highlight_wrong_values=0x7f090043;
+        public static final int highlight_wrong_values_summary=0x7f090044;
+        public static final int hint=0x7f090052;
         public static final int homepage=0x7f090004;
-        public static final int im_disable_modes_hint=0x7f090057;
-        public static final int im_numpad_hint=0x7f090056;
-        public static final int im_popup_hint=0x7f090054;
-        public static final int im_single_number_hint=0x7f090055;
+        public static final int im_disable_modes_hint=0x7f090059;
+        public static final int im_numpad_hint=0x7f090058;
+        public static final int im_popup_hint=0x7f090056;
+        public static final int im_single_number_hint=0x7f090057;
+        public static final int imageproc=0x7f09001c;
         public static final int import_file=0x7f090011;
         public static final int import_file_title=0x7f090012;
-        public static final int importing=0x7f09006f;
-        public static final int input_methods=0x7f090043;
-        public static final int invalid_format=0x7f090063;
-        public static final int last_played_at=0x7f090026;
+        public static final int importing=0x7f090071;
+        public static final int input_methods=0x7f090045;
+        public static final int invalid_format=0x7f090065;
+        public static final int last_played_at=0x7f090028;
         /**  Strings added in 0.7.0 
  Strings added in 0.7.0 
  Strings added in 0.7.0 
@@ -326,7 +329,7 @@ containing a value of this type.
  Strings added in 0.7.0 
  Strings added in 0.7.0 
          */
-        public static final int loading=0x7f090065;
+        public static final int loading=0x7f090067;
         /**  Strings added/changed in 0.7.1 
  Strings added/changed in 0.7.1 
  Strings added/changed in 0.7.1 
@@ -335,77 +338,77 @@ containing a value of this type.
  Strings added/changed in 0.7.1 
  Strings added/changed in 0.7.1 
          */
-        public static final int more_settings=0x7f090066;
-        public static final int n_playing=0x7f090022;
-        public static final int n_puzzles=0x7f09001e;
-        public static final int n_solved=0x7f090020;
-        public static final int n_unsolved=0x7f090021;
+        public static final int more_settings=0x7f090068;
+        public static final int n_playing=0x7f090024;
+        public static final int n_puzzles=0x7f090020;
+        public static final int n_solved=0x7f090022;
+        public static final int n_unsolved=0x7f090023;
         public static final int name=0x7f09000c;
-        public static final int no_puzzles=0x7f09001c;
-        public static final int no_puzzles_found=0x7f090061;
-        public static final int not_started=0x7f090025;
+        public static final int no_puzzles=0x7f09001e;
+        public static final int no_puzzles_found=0x7f090063;
+        public static final int not_started=0x7f090027;
         public static final int note=0x7f09000d;
-        public static final int numpad=0x7f090048;
-        public static final int numpad_abbr=0x7f09004c;
-        public static final int numpad_move_right=0x7f09004a;
-        public static final int numpad_move_right_summary=0x7f09004b;
-        public static final int numpad_summary=0x7f090049;
-        public static final int on_date=0x7f09002a;
-        public static final int one_puzzle=0x7f09001d;
-        public static final int play_puzzle=0x7f090031;
-        public static final int playing=0x7f090024;
-        public static final int popup=0x7f090044;
-        public static final int popup_abbr=0x7f09004d;
-        public static final int popup_summary=0x7f090045;
+        public static final int numpad=0x7f09004a;
+        public static final int numpad_abbr=0x7f09004e;
+        public static final int numpad_move_right=0x7f09004c;
+        public static final int numpad_move_right_summary=0x7f09004d;
+        public static final int numpad_summary=0x7f09004b;
+        public static final int on_date=0x7f09002c;
+        public static final int one_puzzle=0x7f09001f;
+        public static final int play_puzzle=0x7f090033;
+        public static final int playing=0x7f090026;
+        public static final int popup=0x7f090046;
+        public static final int popup_abbr=0x7f09004f;
+        public static final int popup_summary=0x7f090047;
         public static final int puzzle_folders=0x7f090002;
-        public static final int puzzle_inserted=0x7f09005e;
-        public static final int puzzle_updated=0x7f09005f;
-        public static final int puzzles_have_been_exported=0x7f09007c;
-        public static final int puzzles_saved=0x7f090060;
+        public static final int puzzle_inserted=0x7f090060;
+        public static final int puzzle_updated=0x7f090061;
+        public static final int puzzles_have_been_exported=0x7f09007e;
+        public static final int puzzles_saved=0x7f090062;
         public static final int rename_folder=0x7f090014;
         public static final int rename_folder_title=0x7f090016;
-        public static final int reset_puzzle=0x7f090032;
-        public static final int reset_puzzle_confirm=0x7f090030;
-        public static final int restart=0x7f090039;
-        public static final int restart_confirm=0x7f09003b;
+        public static final int reset_puzzle=0x7f090034;
+        public static final int reset_puzzle_confirm=0x7f090032;
+        public static final int restart=0x7f09003b;
+        public static final int restart_confirm=0x7f09003d;
         public static final int save=0x7f09000a;
-        public static final int save_to_sdcard=0x7f090074;
-        public static final int screen_border_size=0x7f090067;
-        public static final int screen_border_size_summary=0x7f090068;
-        public static final int sdcard_not_found=0x7f09007b;
-        public static final int select_difficulty=0x7f090082;
+        public static final int save_to_sdcard=0x7f090076;
+        public static final int screen_border_size=0x7f090069;
+        public static final int screen_border_size_summary=0x7f09006a;
+        public static final int sdcard_not_found=0x7f09007d;
+        public static final int select_difficulty=0x7f090084;
         public static final int select_number=0x7f09000e;
-        public static final int select_theme=0x7f090078;
-        public static final int send_by_mail=0x7f090075;
+        public static final int select_theme=0x7f09007a;
+        public static final int send_by_mail=0x7f090077;
         public static final int send_me_bugs=0x7f090007;
         /**  Strings added/changed in 1.1.2 
          */
-        public static final int set_checkpoint=0x7f090088;
-        public static final int settings=0x7f09003e;
-        public static final int show_hints=0x7f09005a;
-        public static final int show_hints_summary=0x7f09005b;
-        public static final int show_number_totals=0x7f090084;
-        public static final int show_number_totals_summary=0x7f090085;
-        public static final int show_time=0x7f09005c;
-        public static final int show_time_summary=0x7f09005d;
-        public static final int single_number=0x7f090046;
-        public static final int single_number_abbr=0x7f09004e;
-        public static final int single_number_summary=0x7f090047;
-        public static final int solved=0x7f090023;
-        public static final int that_is_all=0x7f090052;
-        public static final int theme=0x7f090076;
-        public static final int theme_summary=0x7f090077;
-        public static final int undo=0x7f090036;
-        public static final int undo_to_checkpoint=0x7f090089;
-        public static final int undo_to_checkpoint_confirm=0x7f09008a;
-        public static final int unknown_export_error=0x7f090071;
-        public static final int unknown_import_error=0x7f090062;
+        public static final int set_checkpoint=0x7f09008a;
+        public static final int settings=0x7f090040;
+        public static final int show_hints=0x7f09005c;
+        public static final int show_hints_summary=0x7f09005d;
+        public static final int show_number_totals=0x7f090086;
+        public static final int show_number_totals_summary=0x7f090087;
+        public static final int show_time=0x7f09005e;
+        public static final int show_time_summary=0x7f09005f;
+        public static final int single_number=0x7f090048;
+        public static final int single_number_abbr=0x7f090050;
+        public static final int single_number_summary=0x7f090049;
+        public static final int solved=0x7f090025;
+        public static final int that_is_all=0x7f090054;
+        public static final int theme=0x7f090078;
+        public static final int theme_summary=0x7f090079;
+        public static final int undo=0x7f090038;
+        public static final int undo_to_checkpoint=0x7f09008b;
+        public static final int undo_to_checkpoint_confirm=0x7f09008c;
+        public static final int unknown_export_error=0x7f090073;
+        public static final int unknown_import_error=0x7f090064;
         public static final int version=0x7f090003;
-        public static final int welcome=0x7f09004f;
-        public static final int well_done=0x7f09003c;
-        public static final int what_is_new=0x7f090086;
+        public static final int welcome=0x7f090051;
+        public static final int well_done=0x7f09003e;
+        public static final int what_is_new=0x7f090088;
         public static final int work_in_progress=0x7f090006;
-        public static final int yesterday_at_time=0x7f090029;
+        public static final int yesterday_at_time=0x7f09002b;
     }
     public static final class style {
         /**  themes 
