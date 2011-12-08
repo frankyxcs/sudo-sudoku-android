@@ -21,4 +21,8 @@
         <item>Medium</item>
         <item>Hard</item>
     </string-array>
+    <string-array name="imageimport_choices">
+    	<item>Take a picture</item>
+    	<item>Choose a picture</item>
+    </string-array>
 </resources>

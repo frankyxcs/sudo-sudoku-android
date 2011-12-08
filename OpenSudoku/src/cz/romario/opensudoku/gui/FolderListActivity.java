@@ -69,7 +69,9 @@ public class FolderListActivity extends ListActivity {
 	
     // kch
     public static final int MENU_ITEM_GENERATE = Menu.FIRST + 7;
+    public static final int MENU_ITEM_IMAGEPROC = Menu.FIRST + 8;
     public static final int DIALOG_GENERATE = 4;
+    public static final int DIALOG_IMAGEPROC = 5;
     // endkch
     
 	private static final int DIALOG_ABOUT = 0;
@@ -176,6 +178,8 @@ public class FolderListActivity extends ListActivity {
         // kch
         menu.add(0, MENU_ITEM_GENERATE, 3, R.string.generate)
         	.setIcon(android.R.drawable.ic_menu_manage);
+        menu.add(0,MENU_ITEM_IMAGEPROC, 3, R.string.imageproc)
+        	.setIcon(android.R.drawable.ic_menu_camera);
         // endkch
 
         // Generate any additional actions that can be performed on the
@@ -284,6 +288,17 @@ public class FolderListActivity extends ListActivity {
     		    }
     		})
     		.create();
+    		
+    	case DIALOG_IMAGEPROC:
+    		return new AlertDialog.Builder(this)
+    		.setTitle(R.string.choose_imageimport)
+    		.setItems(R.array.imageimport_choices, new DialogInterface.OnClickListener() {
+    		    public void onClick(DialogInterface dialog, int itemIndex) {
+    		    	
+    		    }
+    		})
+    		.create();
+    		//endkch
     	}
     	
     	return null;
@@ -367,11 +382,12 @@ public class FolderListActivity extends ListActivity {
         	showDialog(DIALOG_ABOUT);
         	return true;
         case MENU_ITEM_GENERATE: // kch
-        	/*intent = new Intent();
-        	intent.setClass(this, SudokuGeneratorActivity.class);
-        	startActivity(intent);*/
         	showDialog(DIALOG_GENERATE);
-        	return true; // endkch
+        	return true; 
+        case MENU_ITEM_IMAGEPROC:
+        	showDialog(DIALOG_IMAGEPROC);
+        	return true;
+        	// endkch
         }
         return super.onOptionsItemSelected(item);
 	}
