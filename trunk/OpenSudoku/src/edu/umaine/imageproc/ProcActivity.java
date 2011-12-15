@@ -37,7 +37,7 @@ public class ProcActivity extends Activity {
 	private static int[] rotates = {0, 90, -90, 180};
 	private Uri mImageCaptureUri;
 	private ImageView[][] mCellImages;
-	protected int mRotation = 0;
+	protected Bitmap sudokuBitmap;
 	private static final int PICK_FROM_CAMERA = 1;
 	private static final int CROP_FROM_CAMERA = 2;
 	private static final int PICK_FROM_FILE = 3;
@@ -125,23 +125,20 @@ public class ProcActivity extends Activity {
 			Bundle extras = data.getExtras();
 
 			if (extras != null) {	        	
-				Bitmap photo = extras.getParcelable("data");
+				sudokuBitmap = extras.getParcelable("data");
 				Log.e(TAG,"Got bitmap");
-
-				Log.e(TAG,"promptAndRotate()");
-				new AlertDialog.Builder(this) 
-				.setTitle("Rotate the image:")
-				.setItems(rotateChoices, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int idx) {
-				    	mRotation = rotates[idx];
-				    }
-				})
-				.create()
-				.show();
 				
-				photo = rotateBitmap(photo, mRotation);
-
-				processBitmap(photo);
+				Log.e(TAG,"promptAndRotate()");
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setTitle("Rotate the image:");
+				builder.setItems(rotateChoices, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int idx) {
+				    	sudokuBitmap = rotateBitmap(sudokuBitmap,rotates[idx]);
+				    	processSudokuBitmap(sudokuBitmap);
+				    }
+				});
+				AlertDialog dlg = builder.create();
+				dlg.show();
 
 				/*
 		            FileOutputStream out;
@@ -248,10 +245,14 @@ public class ProcActivity extends Activity {
 		}
 	}
 
-	private void processBitmap(Bitmap b) {
+	private void processSudokuBitmap(Bitmap b) {
 		SudokuParseProcess spp = new SudokuParseProcess(b);
 		Log.e(TAG,"Create SudokuParseProcess");
-		spp.generateCells();
+		try {
+			spp.generateCells();
+		} catch (InvalidSudokuImageException e) {
+			e.printStackTrace();
+		}
 		Log.e(TAG,"generateCells()");
 		Bitmap[][] cells = spp.getCells();
 		Log.e(TAG,"getCells()");
