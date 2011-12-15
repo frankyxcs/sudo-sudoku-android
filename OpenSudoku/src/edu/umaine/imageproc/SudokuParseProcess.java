@@ -129,6 +129,10 @@ public class SudokuParseProcess {
 				corners[TOP_LEFT].x=j;
 				break;
 			}
+			if (j>width/2)
+			{
+				throw new InvalidSudokuImageException();
+			}
 		}
 		
 		//find right side of top
@@ -139,6 +143,10 @@ public class SudokuParseProcess {
 			{
 				corners[TOP_RIGHT].x=j;
 				break;
+			}
+			if (j<width/2)
+			{
+				throw new InvalidSudokuImageException();
 			}
 		}
 		
@@ -159,6 +167,10 @@ public class SudokuParseProcess {
 				corners[BOTTOM_RIGHT].y=i;
 				break;
 			}
+			if (i<height/2)
+			{
+				throw new InvalidSudokuImageException();
+			}
 		}
 		lastI=256;
 		
@@ -174,7 +186,7 @@ public class SudokuParseProcess {
 			I=getRowIntensity(i);
 		}
 		
-		//find right side of bottom
+		//find left side of bottom
 		for (j=0;j<width;j+=2)
 		{
 			I=getIntensity(b.getPixel(j,corners[BOTTOM_LEFT].y));
@@ -183,9 +195,13 @@ public class SudokuParseProcess {
 				corners[BOTTOM_LEFT].x=j;
 				break;
 			}
+			if (j>width/2)
+			{
+				throw new InvalidSudokuImageException();
+			}
 		}
 		
-		//find left side of bottom
+		//find right side of bottom
 		for (j=width-1;j>0;j-=2)
 		{
 			I=getIntensity(b.getPixel(j,corners[BOTTOM_LEFT].y));
@@ -193,6 +209,10 @@ public class SudokuParseProcess {
 			{
 				corners[BOTTOM_RIGHT].x=j;
 				break;
+			}
+			if (j<width/2)
+			{
+				throw new InvalidSudokuImageException();
 			}
 		}
 	}
