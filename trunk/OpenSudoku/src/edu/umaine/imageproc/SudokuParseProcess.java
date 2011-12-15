@@ -45,7 +45,7 @@ public class SudokuParseProcess {
 		return cells;
 	}
 	
-	public void generateCells()
+	public void generateCells() throws InvalidSudokuImageException
 	{
 		findPuzzleCorners();
 		int i,j;
@@ -77,7 +77,7 @@ public class SudokuParseProcess {
 		}
 	}
 	
-	private void findPuzzleCorners()
+	private void findPuzzleCorners() throws InvalidSudokuImageException
 	{
 		int i,j,I=0,Il=0,Ih=0,lastI=256;
 		//I is intensity, Ih and Il correspond to the intensities of 
@@ -100,6 +100,10 @@ public class SudokuParseProcess {
 				corners[TOP_LEFT].y=i;
 				corners[TOP_RIGHT].y=i;
 				break;
+			}
+			if (i>height/2)
+			{
+				throw new InvalidSudokuImageException();
 			}
 		}
 		lastI=Il;
