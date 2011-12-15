@@ -65,13 +65,14 @@ public class SudokuParseProcess {
 				xmax=(corners[BOTTOM_RIGHT].x-corners[TOP_RIGHT].x)*j/9+corners[TOP_RIGHT].x;
 				x=(xmax-xmin)*i/9+xmin+(xmax-xmin)/90;
 				w=(xmax-xmin)*8/90;
-				cells[i][j]=Bitmap.createBitmap(b,x,y,w,h);
+				cells[j][i]=Bitmap.createBitmap(b,x,y,w,h);
+				/*
 				try {
-					out = new FileOutputStream("/mnt/sdcard/download/newcell"+j+i+".jpg");
+					out = new FileOutputStream("/mnt/sdcard/newcell"+j+i+".jpg");
 					cells[i][j].compress(Bitmap.CompressFormat.JPEG, 90, out);
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
-				}
+				}*/
 			}
 		}
 	}
@@ -127,7 +128,7 @@ public class SudokuParseProcess {
 		}
 		
 		//find right side of top
-		for (j=width;j>0;j-=2)
+		for (j=width-1;j>0;j-=2)
 		{
 			I=getIntensity(b.getPixel(j,i));
 			if (Math.abs(I-Il)<Math.abs(Ih-I))
@@ -138,10 +139,10 @@ public class SudokuParseProcess {
 		}
 		
 		//Reset white value for Ih to the bottom of the image
-		Ih=getRowIntensity(height);
+		Ih=getRowIntensity(height-1);
 		
 		//Scan specified area to find bottom of sudoku
-		for (i=height-2;i>0;i-=2)
+		for (i=height-3;i>0;i-=2)
 		{	
 			//find average intensity of row
 			I=getRowIntensity(i);
@@ -181,7 +182,7 @@ public class SudokuParseProcess {
 		}
 		
 		//find left side of bottom
-		for (j=width;j>0;j-=2)
+		for (j=width-1;j>0;j-=2)
 		{
 			I=getIntensity(b.getPixel(j,corners[BOTTOM_LEFT].y));
 			if (Math.abs(I-Il)<Math.abs(Ih-I))
