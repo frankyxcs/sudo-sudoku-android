@@ -251,6 +251,7 @@ public class ProcActivity extends Activity {
 		try {
 			spp.generateCells();
 		} catch (InvalidSudokuImageException e) {
+			Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
 			e.printStackTrace();
 		}
 		Log.e(TAG,"generateCells()");
