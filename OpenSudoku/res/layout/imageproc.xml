@@ -29,12 +29,12 @@
 		android:layout_width="match_parent" 		 
 		android:layout_height="wrap_content"
 		android:text="Select image" />
-		
+
 	<ImageView
-		android:id="@+id/iv_photo"
-		android:layout_marginTop="10dp"
-		android:layout_gravity="center_horizontal"
-		android:layout_width="fill_parent" 		 
-		android:layout_height="200dp"/>
+	    android:id="@+id/c00"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:scaleType="fitCenter"
+	    android:src="@drawable/btn_completed_bg" />
 		
 </LinearLayout>

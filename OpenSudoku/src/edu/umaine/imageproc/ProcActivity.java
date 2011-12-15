@@ -36,8 +36,7 @@ import android.widget.Toast;
  */
 public class ProcActivity extends Activity {
 	private Uri mImageCaptureUri;
-	private ImageView mImageView;
-	
+	private ImageView[][] mCellImages;
 	private static final int PICK_FROM_CAMERA = 1;
 	private static final int CROP_FROM_CAMERA = 2;
 	private static final int PICK_FROM_FILE = 3;
@@ -84,7 +83,8 @@ public class ProcActivity extends Activity {
 		final AlertDialog dialog = builder.create();
 		
 		Button button 	= (Button) findViewById(R.id.btn_crop);
-		mImageView		= (ImageView) findViewById(R.id.iv_photo);
+		
+		mCellImages[0][0] = (ImageView) findViewById(R.id.c00);
 		
 		button.setOnClickListener(new View.OnClickListener() {	
 			public void onClick(View v) {
@@ -116,8 +116,9 @@ public class ProcActivity extends Activity {
 		        if (extras != null) {	        	
 		            Bitmap photo = extras.getParcelable("data");
 		            
-		            mImageView.setImageBitmap(photo);
+		            //mImageView.setImageBitmap(photo);
 		            
+		            /*
 		            FileOutputStream out;
 					try {
 						String file = Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator+"mytest.jpg";
@@ -126,7 +127,12 @@ public class ProcActivity extends Activity {
 				        photo.compress(Bitmap.CompressFormat.JPEG, 90, out);
 					} catch (FileNotFoundException e) {
 						e.printStackTrace();
-					}
+					}*/
+		            SudokuParseProcess spp = new SudokuParseProcess(photo);
+		            spp.generateCells();
+		            Bitmap[][] cells = spp.getCells();
+		            
+		            mCellImages[0][0].setImageBitmap(cells[0][0]);
 		        }
 		        
 		        //File f = new File(mImageCaptureUri.getPath());            
