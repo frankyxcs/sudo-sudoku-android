@@ -20,9 +20,13 @@
 
 package cz.romario.opensudoku.gui;
 
+import java.io.File;
+
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -30,6 +34,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -49,6 +55,7 @@ import cz.romario.opensudoku.db.SudokuDatabase;
 import cz.romario.opensudoku.game.FolderInfo;
 import cz.romario.opensudoku.gui.FolderDetailLoader.FolderDetailCallback;
 import cz.romario.opensudoku.utils.AndroidUtils;
+import edu.umaine.imageproc.ProcActivity;
 import edu.umaine.opensudoku.generator.Generator;
 
 /**
@@ -71,7 +78,7 @@ public class FolderListActivity extends ListActivity {
     public static final int MENU_ITEM_GENERATE = Menu.FIRST + 7;
     public static final int MENU_ITEM_IMAGEPROC = Menu.FIRST + 8;
     public static final int DIALOG_GENERATE = 4;
-    public static final int DIALOG_IMAGEPROC = 5;
+    //public static final int DIALOG_IMAGEPROC = 5;
     // endkch
     
 	private static final int DIALOG_ABOUT = 0;
@@ -288,8 +295,8 @@ public class FolderListActivity extends ListActivity {
     		    }
     		})
     		.create();
-    		
-    	case DIALOG_IMAGEPROC:
+    	
+    	/*case DIALOG_IMAGEPROC:
     		return new AlertDialog.Builder(this)
     		.setTitle(R.string.choose_imageimport)
     		.setItems(R.array.imageimport_choices, new DialogInterface.OnClickListener() {
@@ -298,7 +305,8 @@ public class FolderListActivity extends ListActivity {
     		    }
     		})
     		.create();
-    		//endkch
+    		*/
+    	//endkch
     	}
     	
     	return null;
@@ -385,7 +393,10 @@ public class FolderListActivity extends ListActivity {
         	showDialog(DIALOG_GENERATE);
         	return true; 
         case MENU_ITEM_IMAGEPROC:
-        	showDialog(DIALOG_IMAGEPROC);
+        	//showDialog(DIALOG_IMAGEPROC);
+        	intent = new Intent();
+        	intent.setClass(this, ProcActivity.class);
+        	startActivity(intent);
         	return true;
         	// endkch
         }

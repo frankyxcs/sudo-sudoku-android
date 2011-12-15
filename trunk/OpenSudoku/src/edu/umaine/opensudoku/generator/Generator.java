@@ -22,17 +22,6 @@ public class Generator {
 		String[] diffs = context.getResources().getStringArray(R.array.game_levels);
 		difficulty = diffs[itemIndex];
 		nGivens = givensByDiff[itemIndex];
-		/*switch(itemIndex) {
-		case 0:
-			nGivens = 40;
-			break;
-		case 1:
-			nGivens = 32;
-			break;
-		case 2:
-			nGivens = 28;
-			break;			
-		}*/
 
 		if( nGivens < 0 ) {
 			Log.e("Generator", "Could not parse difficulty index from dialog");
@@ -43,7 +32,7 @@ public class Generator {
 		//Toast.makeText(context, "first element is: " + arr[0], 1).show();
 		Toast.makeText(context, "Number of Givens: " + nGivens, 1).show();
 
-		// Open the ImportSudokuActivity with Extras from out Generator
+		// Open the ImportSudokuActivity with Extras
 		String strGame = gameFromArr(arr);
 		Intent i = new Intent(context, SudokuImportActivity.class);
 		i.putExtra("FOLDER_NAME","Generated - " + difficulty);
@@ -54,11 +43,11 @@ public class Generator {
 		context.startActivity(i);
 	}
 	
+	// Converts the integer array from the JNI into a formatted String accepted by OpenSudoku 
 	private static String gameFromArr(int[] arr) {
-		String str = "";
-		str = Arrays.toString(arr);
+		String str = Arrays.toString(arr);
 		str = str.replace(", ", ""); // take out comma separation
-		str = str.replaceAll("[\\[\\]]","") + "\n";
+		str = str.replaceAll("[\\[\\]]","") + "\n"; // take [ and ] off ends
 		return str;
 	}
 
