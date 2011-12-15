@@ -181,6 +181,7 @@ containing a value of this type.
         public static final int button_9=0x7f080013;
         public static final int button_clear=0x7f080014;
         public static final int button_close=0x7f080016;
+        public static final int c00=0x7f080018;
         public static final int created=0x7f080026;
         public static final int detail=0x7f080005;
         public static final int directory=0x7f080020;
@@ -189,7 +190,6 @@ containing a value of this type.
         public static final int get_more_puzzles=0x7f080006;
         public static final int input_methods=0x7f08001e;
         public static final int iv_icon=0x7f080002;
-        public static final int iv_photo=0x7f080018;
         public static final int last_played=0x7f080025;
         public static final int name=0x7f080004;
         public static final int note=0x7f080027;

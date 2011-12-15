@@ -40,8 +40,14 @@ public class SudokuParseProcess {
 		return cells[row][col];
 	}
 	
+	public Bitmap[][] getCells()
+	{
+		return cells;
+	}
+	
 	public void generateCells()
 	{
+		findPuzzleCorners();
 		int i,j;
 		int x,y,h,w; //coordinates
 		int xmin,xmax; //used for calculating cell locations
@@ -70,7 +76,7 @@ public class SudokuParseProcess {
 		}
 	}
 	
-	public void FindPuzzleCorners()
+	private void findPuzzleCorners()
 	{
 		int i,j,I=0,Il=0,Ih=0,lastI=256;
 		//I is intensity, Ih and Il correspond to the intensities of 
