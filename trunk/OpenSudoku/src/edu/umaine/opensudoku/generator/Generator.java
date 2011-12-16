@@ -1,3 +1,8 @@
+//Generator.java
+//Kevin Hanselman, Carl Ericson
+//ECE 471 Fall 2011 Project
+//University of Maine, Orono
+
 package edu.umaine.opensudoku.generator;
 
 import java.util.Arrays;
