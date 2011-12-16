@@ -1,3 +1,8 @@
+//SudokuParseProcess.java
+//Carl Ericson, Kevin Hanselman
+//ECE 471 Fall 2011 Project
+//University of Maine, Orono
+
 package edu.umaine.imageproc;
 
 import java.io.FileNotFoundException;
@@ -7,7 +12,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
 
-
+//Object which encapsulates each of the processes required for image parsing 
 public class SudokuParseProcess {
 	
 	private Point corners[]=new Point[4];
@@ -35,16 +40,19 @@ public class SudokuParseProcess {
 		//generateCells();
 	}
 	
+	//returns the desired cell from its row and column
 	public Bitmap getCell(int row, int col)
 	{
 		return cells[row][col];
 	}
 	
+	//returns the entire cell array
 	public Bitmap[][] getCells()
 	{
 		return cells;
 	}
 	
+	//sets up the bitmap array of cells
 	public void generateCells() throws InvalidSudokuImageException
 	{
 		findPuzzleCorners();
@@ -77,6 +85,7 @@ public class SudokuParseProcess {
 		}
 	}
 	
+	//Parses the image to determine the pixel coordinates of each of the puzzle's corners
 	private void findPuzzleCorners() throws InvalidSudokuImageException
 	{
 		int i,j,I=0,Il=0,Ih=0,lastI=256;
